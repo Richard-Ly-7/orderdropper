@@ -7,7 +7,7 @@ const DATA = [
     { id: '2', name: 'Ravioli', price: 12.99, base64: '', restaurant: 'Olive Garden' },
 ];
 
-test('renders initial dishes as buyer', () => {
+test('renders initial dishes as customer', () => {
     render(
         <DishList
             dishes={DATA}
@@ -34,7 +34,7 @@ test('check add to cart button visibility', () => {
             updateCart={undefined}
             deleteDish={undefined}
             updateDish={undefined}
-            user={{ role: 'buyer' }}
+            user={{ role: 'customer' }}
             modifiable={false}
         />
     );

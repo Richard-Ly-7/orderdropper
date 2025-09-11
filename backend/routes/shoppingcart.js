@@ -5,8 +5,8 @@ const { verifyToken } = require('../middleware/auth');
 const router = express.Router();
 
 router.get('/:id', verifyToken, async (req, res) => {
-    if(req.user.role !== "buyer"){
-        return res.status(401).json({ error: 'User must be a buyer' });
+    if(req.user.role !== "customer"){
+        return res.status(401).json({ error: 'User must be a customer' });
     }
     try {
         const user = await User.findById(req.params.id);
@@ -17,8 +17,8 @@ router.get('/:id', verifyToken, async (req, res) => {
 });
 
 router.put('/:id', verifyToken, async (req, res) => {
-    if(req.user.role !== "buyer"){
-        return res.status(401).json({ error: 'User must be a buyer' });
+    if(req.user.role !== "customer"){
+        return res.status(401).json({ error: 'User must be a customer' });
     }
     const { shoppingCart } = req.body;
     try{

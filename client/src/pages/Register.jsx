@@ -10,7 +10,7 @@ export default function Register({ onAuth, displayMessage }){
     const api = import.meta.env.VITE_API_URL;
 
     const [fields, setFields] = useState({
-        selectValue: "Buyer",
+        selectValue: "Customer",
         displayName: "",
         restaurantName: "",
         address: "",
@@ -47,8 +47,8 @@ export default function Register({ onAuth, displayMessage }){
         const res = await fetch(`${api}/api/auth/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(fields.selectValue === "Buyer" ? 
-                {email: fields.email, username: fields.displayName, password: fields.password, address: fields.address, base64: fields.base64, role: "buyer"} :
+            body: JSON.stringify(fields.selectValue === "Customer" ? 
+                {email: fields.email, username: fields.displayName, password: fields.password, address: fields.address, base64: fields.base64, role: "customer"} :
                 {email: fields.email, username: fields.restaurantName, password: fields.password, address: fields.address, base64: fields.base64, role: "restaurant", description: fields.description}
             ),
         });
@@ -75,13 +75,13 @@ export default function Register({ onAuth, displayMessage }){
                         <Form.Group className="mb-5">
                             <Form.Label>I am a:</Form.Label>
                             <Form.Select onChange={changeField}>
-                                <option>Buyer</option>
+                                <option>Customer</option>
                                 <option>Restaurant</option>
                             </Form.Select>
                         </Form.Group>
 
                         {
-                            fields.selectValue === "Buyer" ?
+                            fields.selectValue === "Customer" ?
 
                             <>
                                 <Form.Group className="mb-4">

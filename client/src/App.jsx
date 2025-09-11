@@ -132,9 +132,9 @@ return (
             <Route path="/login" element={<Login onAuth={handleLogin} displayMessage={displayMessage} />} />
             <Route path="/register" element={<Register onAuth={handleLogin} displayMessage={displayMessage} />} />
             <Route path="/post" element={user ? (user.role === "restaurant" ? <Post user={user} displayMessage={displayMessage} /> : <Navigate to="/" />) : <Navigate to="/login" /> } />
-            <Route path="/shoppingcart" element={user ? (user.role === "buyer" ? <ShoppingCart user={user} updateCart={updateCart} cartTotal={cartTotal} displayMessage={displayMessage} /> : <Navigate to="/" />) : <Navigate to="/login" /> } />
-            <Route path="/purchase" element={user ? (user.role === "buyer" && user?.shoppingCart?.length > 0 ? <Purchase cartTotal={cartTotal} displayMessage={displayMessage} emptyCart={emptyCart} /> : <Navigate to="/" />) : <Navigate to="/login" /> } />
-            <Route path="/profile" element={user ? (user.role === "buyer" ? <Profile user={user} /> : <Navigate to={`/restaurantDishes?restaurant=${user.restaurantId}`} />) : <Navigate to="/login" /> } />
+            <Route path="/shoppingcart" element={user ? (user.role === "customer" ? <ShoppingCart user={user} updateCart={updateCart} cartTotal={cartTotal} displayMessage={displayMessage} /> : <Navigate to="/" />) : <Navigate to="/login" /> } />
+            <Route path="/purchase" element={user ? (user.role === "customer" && user?.shoppingCart?.length > 0 ? <Purchase cartTotal={cartTotal} displayMessage={displayMessage} emptyCart={emptyCart} /> : <Navigate to="/" />) : <Navigate to="/login" /> } />
+            <Route path="/profile" element={user ? (user.role === "customer" ? <Profile user={user} /> : <Navigate to={`/restaurantDishes?restaurant=${user.restaurantId}`} />) : <Navigate to="/login" /> } />
         </Routes>
     </>
 )

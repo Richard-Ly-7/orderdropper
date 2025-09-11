@@ -1,4 +1,4 @@
-OrderDropper is a food ordering site which allows restaurants to post, edit, and delete their dishes, and allows buyers to add dishes to their cart and order them.
+OrderDropper is a food ordering site which allows restaurants to post, edit, and delete their dishes, and allows customers to add dishes to their cart and order them.
 
 In order to set up this app locally, create .env files in both the client and backend with the following environment values:
 
@@ -11,7 +11,7 @@ JWT_SECRET=String to sign JWT tokens with
 APP_ORIGIN=Where you are hosting your client (http://localhost:5173)
 PORT=Port that the server is listening in on (4000)
 
-Link to live frontend: https://food-ordering-site-ecru.vercel.app/
+Link to live frontend: https://food-ordering-site-ecru.vercel.app
 Link to live backend: https://food-ordering-site-j5bk.onrender.com
 
 API routes:
