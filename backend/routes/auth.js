@@ -26,7 +26,15 @@ router.post('/signup', async (req, res) => {
         await newUser.save();
     }
 
-    res.status(201).json({ message: 'New User Created'});
+    const token = jwt.sign({ userId: newUser._id, role: newUser.role }, JWT_SECRET);
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+        maxAge: 7 * 24 * 60 * 60 * 1000
+    });
+
+    res.status(201).json({...newUser._doc, id: newUser._id});
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Signup failed' });

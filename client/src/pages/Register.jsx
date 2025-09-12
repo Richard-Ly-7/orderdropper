@@ -46,6 +46,7 @@ export default function Register({ onAuth, displayMessage }){
 
         const res = await fetch(`${api}/api/auth/signup`, {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(fields.selectValue === "Customer" ? 
                 {email: fields.email, username: fields.displayName, password: fields.password, address: fields.address, base64: fields.base64, role: "customer"} :
@@ -56,7 +57,7 @@ export default function Register({ onAuth, displayMessage }){
         const data = await res.json();
 
         if (res.ok) {
-            onAuth(data.user);
+            onAuth(data);
             displayMessage('Register successful!');
             navigate('/');
         } else {
