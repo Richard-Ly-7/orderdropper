@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "imagekit": "^6.0.0",
     "imagekit-javascript": "^4.0.1"
   }
 }

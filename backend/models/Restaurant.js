@@ -4,7 +4,8 @@ const restaurantSchema = new mongoose.Schema({
     name: { type: String, required: true },
     address: { type: String, required: true },
     description: { type: String },
-    base64: { type: String },
+    image: { type: String },
+    imageKitFileId: { type: String },
     userEmail: { type: String, required: true }
 }, { timestamps: true });
 

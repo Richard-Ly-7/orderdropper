@@ -3,8 +3,8 @@ import DishList from './DishList';
 import { expect, test } from 'vitest';
 
 const DATA = [
-    { id: '1', name: 'Pizza', price: 10.5, base64: '', restaurant: 'Pizza Hut' },
-    { id: '2', name: 'Ravioli', price: 12.99, base64: '', restaurant: 'Olive Garden' },
+    { id: '1', name: 'Pizza', price: 10.5, image: '', restaurant: 'Pizza Hut' },
+    { id: '2', name: 'Ravioli', price: 12.99, image: '', restaurant: 'Olive Garden' },
 ];
 
 test('renders initial dishes as customer', () => {

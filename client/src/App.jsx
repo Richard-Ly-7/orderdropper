@@ -81,25 +81,33 @@ function App() {
             method: 'DELETE',
             credentials: 'include'
         });
+
+        const data = await res.json();
+
         if(res.ok){
-            const data = await res.json();
             setDishes(prev => ({...prev, dishes: dishes.filter((dish) => dish.id !== id)}));
             displayMessage(data.message);
+        }else{
+            displayMessage(data.error);
         }
     };
 
-    const updateDish = async (id, updatedDish, dishes, setDishes) => {
+    const updateDish = async (id, updatedDish, dishes, setDishes, base64) => {
         const res = await fetch(`${api}/dishes/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({updatedDish: updatedDish}),
+            body: JSON.stringify({updatedDish: updatedDish, image: base64}),
             credentials: 'include'
         });
+
+        const data = await res.json();
+
         if(res.ok){
-            const data = await res.json();
             const updatedDishes = dishes.map((dish) => dish.id === id ? updatedDish : dish);
             setDishes(prev => ({...prev, dishes: updatedDishes}));
             displayMessage(data.message);
+        }else{
+            displayMessage(data.error);
         }
     };
 

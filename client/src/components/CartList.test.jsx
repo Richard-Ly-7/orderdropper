@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 import CartList from '../components/CartList';
 
 const DATA = [
-    { id: '1', name: 'Pizza', price: 10.5, base64: '', restaurant: 'Pizza Hut' },
-    { id: '2', name: 'Ravioli', price: 12.99, base64: '', restaurant: 'Olive Garden' },
+    { id: '1', name: 'Pizza', price: 10.5, image: '', restaurant: 'Pizza Hut' },
+    { id: '2', name: 'Ravioli', price: 12.99, image: '', restaurant: 'Olive Garden' },
 ];
 
 test('renders initial cart items', () => {

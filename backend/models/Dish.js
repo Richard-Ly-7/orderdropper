@@ -5,7 +5,8 @@ const dishSchema = new mongoose.Schema({
     restaurant: { type: String, required: true },
     restaurantId: { type: mongoose.Schema.Types.ObjectId, required: true },
     price: { type: Number, required: true },
-    base64: { type: String }
+    image: { type: String },
+    imageKitFileId: { type: String }
 },  { timestamps: true });
 
 const Dish = mongoose.model('Dish', dishSchema);

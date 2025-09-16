@@ -8,14 +8,14 @@ const DATA = [
         name: 'Pizza Hut',
         address: '1202 39 Ave, Langley, BC V2D D2L',
         description: 'Homemade pizzas',
-        base64: ''
+        image: ''
     },
     {
         id: '2',
         name: 'Olive Garden',
         address: '2302 40 Ave, Langley, BC V3J 8K3',
         description: 'Italian-inspired dishes',
-        base64: ''
+        image: ''
     }
 ];
 
