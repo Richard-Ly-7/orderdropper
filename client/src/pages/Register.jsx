@@ -127,7 +127,7 @@ export default function Register({ onAuth, displayMessage }){
 
                         <Form.Group className="mb-5">
                             <Form.Label>Profile Picture</Form.Label>
-                            <Form.Control type="file" accept="image/jpg, image/jpeg, image/png" onChange={convertToBase64} />
+                            <Form.Control type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
                         </Form.Group>
 
                         <div className="d-flex justify-content-center">

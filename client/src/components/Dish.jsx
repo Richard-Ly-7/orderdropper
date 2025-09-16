@@ -49,7 +49,7 @@ export default function Dish({ dish, dishes, setDishes, updateCart, deleteDish, 
 
                     <Form.Group className="mb-3">
                         <Form.Label>New Image</Form.Label>
-                        <Form.Control type="file" accept="image/jpg, image/jpeg, image/png" onChange={convertToBase64} />
+                        <Form.Control type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
                     </Form.Group>
                     
                     <div className="d-flex justify-content-evenly">
