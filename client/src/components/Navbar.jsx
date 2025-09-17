@@ -2,7 +2,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavigationBar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
 
 export default function Navbar({ user, onLogout, displayMessage }) {
   const navigate = useNavigate();
@@ -16,7 +15,10 @@ export default function Navbar({ user, onLogout, displayMessage }) {
   return (
     <NavigationBar collapseOnSelect expand="lg" className="navbar-background">
       <Container>
-        <NavigationBar.Brand as={Link} to="/" id="brand" className="text-light">OrderDropper</NavigationBar.Brand>
+        <NavigationBar.Brand as={Link} to="/" id="brand" className="text-light d-flex align-items-center">
+          <img alt="OrderDropper Logo" src="./src/assets/orderdropper_logo_white.png" height="40" width="50" className="mb-1" />
+          OrderDropper
+        </NavigationBar.Brand>
         <NavigationBar.Toggle aria-controls="responsive-NavigationBar-nav" />
         <NavigationBar.Collapse id="responsive-NavigationBar-nav">
           <Nav className="ms-auto pt-1">
