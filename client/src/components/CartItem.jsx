@@ -1,4 +1,3 @@
-import CloseButton from 'react-bootstrap/CloseButton';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -6,8 +5,7 @@ export default function CartItem({cartItem, updateCart}){
     return (
         <Col xs={12} sm={12} className="mb-5">
             <Row className="d-flex justify-content-between">
-                <CloseButton className="m-auto" onClick={() => updateCart(cartItem, false)} />
-                <Col xs={10} sm={10} className= "d-flex flex-row justify-content-between shadow-sm rounded p-0 dish-container">
+                <Col xs={12} sm={12} className= "d-flex flex-row justify-content-between shadow-sm rounded p-0 dish-container">
                     {cartItem.image ? 
                         <img src={cartItem.image} className="img-responsive dish-image" /> :
                         <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" fill="slategray" viewBox="0 0 16 16"  className="bi bi-card-image img-responsive dish-image ps-3" >
@@ -19,6 +17,11 @@ export default function CartItem({cartItem, updateCart}){
                         <p className="h2 mb-0">{cartItem.name}</p>
                         <p className="h6">{cartItem.restaurant}</p>
                         <p>${cartItem.price.toFixed(2)}</p>
+                        <div>
+                            <button className="btn btn-light px-2" onClick={() => updateCart(cartItem, false)}><h4 className="p-0 m-0">-</h4></button>
+                            <span className="px-2">{cartItem.count}</span>
+                            <button className="btn btn-light py-2 px-2" onClick={() => updateCart(cartItem, true)}>+</button>
+                        </div>
                     </div>
                 </Col>
             </Row>

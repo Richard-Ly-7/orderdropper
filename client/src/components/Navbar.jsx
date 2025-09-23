@@ -16,7 +16,7 @@ export default function Navbar({ user, onLogout, displayMessage }) {
     <NavigationBar collapseOnSelect expand="lg" className="navbar-background">
       <Container>
         <NavigationBar.Brand as={Link} to="/" id="brand" className="text-light d-flex align-items-center">
-          <img alt="OrderDropper Logo" src="./src/assets/orderdropper_logo_white.png" height="40" width="50" className="mb-1" />
+          <img alt="OrderDropper Logo" src="/orderdropper_logo_white.png" height="40" width="50" className="mb-1" />
           OrderDropper
         </NavigationBar.Brand>
         <NavigationBar.Toggle aria-controls="responsive-NavigationBar-nav" />

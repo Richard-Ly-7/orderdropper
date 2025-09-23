@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { nanoid } from 'nanoid';
 import Navbar from './components/Navbar';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,12 +45,26 @@ function App() {
     const updateCart = async (dish, addToCart) => {
         let updatedCart = [];
 
+        const existingCartItem = user.shoppingCart?.find(d => d.id === dish.id);
+
         if(addToCart){
-            const cartItem = {...dish, id: nanoid()};
-            updatedCart = [...(user.shoppingCart || []), cartItem];
+            const count = existingCartItem ? existingCartItem.count + 1 : 1;
+            const cartItem = {...dish, id: dish.id, count};
+            updatedCart = existingCartItem ? 
+                user.shoppingCart.map(d => 
+                        d.id === dish.id ? { ...d, count: d.count + 1} : d
+                    )
+                :
+                [...(user.shoppingCart || []), cartItem];
             displayMessage("Dish added to cart!");
         }else{
-            updatedCart = user.shoppingCart ? user.shoppingCart.filter(d => d.id !== dish.id) : [];
+            if(existingCartItem.count > 1){
+                updatedCart = user.shoppingCart.map(d => 
+                    d.id === dish.id ? { ...d, count: d.count - 1} : d
+                );
+            }else{
+                updatedCart = user.shoppingCart ? user.shoppingCart.filter(d => d.id !== dish.id) : [];
+            }
         }
         
         setUser({...user, shoppingCart: updatedCart})
@@ -122,7 +135,7 @@ function App() {
     useEffect(() => {
         let total = 0;
         if(user?.shoppingCart){
-            user.shoppingCart.forEach(cartItem => total += cartItem.price);
+            user.shoppingCart.forEach(cartItem => total += cartItem.price * cartItem.count);
         }
         setCartTotal(total.toFixed(2));
     }, [user?.shoppingCart]);
