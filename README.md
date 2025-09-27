@@ -22,7 +22,7 @@ JWT_SECRET=String to sign JWT tokens with (Can be any string)
 APP_ORIGIN=Client URI (Default: http://localhost:5173)
 PORT=Port that the server is listening in on (Default: 4000)
 
-### The following environment variables are optional, but will improve app performance when loading images:
+### The following environment variables are optional, but will improve app performance when loading images by enabling the ImageKit API:
 USE_IMAGEKIT='true' 
 IMAGEKIT_PUBLIC_KEY=Your ImageKit public key
 IMAGEKIT_PRIVATE_KEY=Your ImageKit private key
@@ -60,6 +60,8 @@ GET /shoppingcart/:id - Retrieve a specific user's shopping cart
 PUT /shoppingcart/:id - Update a specific user's shopping cart
 
 ## Image Credits
+
+_Orderdropper and accessibility logos created by Richard Ly._ 
 
 **McDonalds**
 https://pixabay.com/photos/mcdonalds-editorial-chain-fast-food-1340199/
