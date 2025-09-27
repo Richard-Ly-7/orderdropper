@@ -131,7 +131,7 @@ export default function Register({ onAuth, displayMessage }){
                         </Form.Group>
 
                         <div className="d-flex justify-content-center">
-                            <Button variant="outline-primary" type="submit" size="lg">Register</Button>
+                            <Button variant="outline-primary" type="submit" size="lg" className="outline-btn">Register</Button>
                         </div>
                     </Form>
                 </Col>

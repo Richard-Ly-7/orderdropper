@@ -53,8 +53,8 @@ export default function Dish({ dish, dishes, setDishes, updateCart, deleteDish, 
                     </Form.Group>
                     
                     <div className="d-flex justify-content-evenly">
-                        <Button variant="outline-danger" type="button" size="md" onClick={() => setIsEditing(false)}>Cancel</Button>
-                        <Button variant="outline-warning" type="submit" size="md">Update</Button>
+                        <Button variant="outline-danger" type="button" size="md" className="outline-btn" onClick={() => setIsEditing(false)}>Cancel</Button>
+                        <Button variant="outline-warning" type="submit" size="md" className="outline-btn">Update</Button>
                     </div>
 
                 </Form> :
@@ -67,12 +67,12 @@ export default function Dish({ dish, dishes, setDishes, updateCart, deleteDish, 
                         </svg>
                     }
                     <div className="d-flex flex-column justify-content-center align-items-end pe-3">
-                        { user?.role === "customer" ? <Button variant="outline-primary" type="submit" size="sm" className="mb-3" onClick={() => updateCart(dish, true)} >Add to Cart</Button> : 
+                        { user?.role === "customer" ? <Button variant="outline-primary" type="submit" size="sm" className="mb-3 outline-btn" onClick={() => updateCart(dish, true)} >Add to Cart</Button> : 
                             (
                                 modifiable ? 
                                     <div className="d-flex pt-4 pe-2">
-                                        <Button variant="outline-warning" type="submit" size="sm" className="me-2 mb-4" onClick={() => setIsEditing(true)}>Edit</Button>
-                                        <Button variant="outline-danger" type="submit" size="sm" className="mb-4" onClick={() => deleteDish(dish.id, dishes, setDishes)}>Delete</Button>
+                                        <Button variant="outline-warning" type="submit" size="sm" className="me-2 mb-4 outline-btn" onClick={() => setIsEditing(true)}>Edit</Button>
+                                        <Button variant="outline-danger" type="submit" size="sm" className="mb-4 outline-btn" onClick={() => deleteDish(dish.id, dishes, setDishes)}>Delete</Button>
                                     </div>
                                     :
                                     <div className="d-flex pt-3"></div>

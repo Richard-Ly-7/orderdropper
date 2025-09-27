@@ -22,7 +22,7 @@ export default function ShoppingCart({user, updateCart, cartTotal, displayMessag
                     <Container className="text-start border border-primary p-4">
                         <p className="h5">Order Total:</p>
                         <p className="h2">${cartTotal}</p>
-                        <Button variant="outline-warning" type="submit" size="lg" className="mt-2" onClick={() => user.shoppingCart.length === 0 ? displayMessage("Please add an item to your cart.") : navigate(`/purchase`) }>Proceed To Purchase</Button>
+                        <Button variant="outline-warning" type="submit" size="lg" className="mt-2 outline-btn" onClick={() => user.shoppingCart.length === 0 ? displayMessage("Please add an item to your cart.") : navigate(`/purchase`) }>Proceed To Purchase</Button>
                     </Container>
                 </Col>
             </Row>

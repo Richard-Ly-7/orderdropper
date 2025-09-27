@@ -51,7 +51,7 @@ export default function Login({ onAuth, displayMessage }){
                         </Form.Group>
 
                         <div className="d-flex justify-content-center">
-                            <Button variant="outline-primary" type="submit" size="lg">Login</Button>
+                            <Button variant="outline-primary" type="submit" size="lg" className="outline-btn">Login</Button>
                         </div>
                     </Form>
                 </Col>

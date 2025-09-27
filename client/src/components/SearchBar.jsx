@@ -15,7 +15,7 @@ export default function SearchBar({ setSearchQuery }){
         <Container>
             <Form.Label className="d-flex m-auto w-50 mb-5">
                 <Form.Control type="text" className="me-3" onChange={(e) => setQuery(e.target.value)}/>
-                <Button variant="outline-primary" type="button" size="lg" className="ms-3" onClick={handleClick}>Search</Button>
+                <Button variant="outline-primary" type="button" size="lg" className="ms-3 outline-btn" onClick={handleClick}>Search</Button>
             </Form.Label>
         </Container>
     )

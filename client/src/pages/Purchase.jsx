@@ -50,7 +50,7 @@ export default function Purchase({cartTotal, displayMessage, emptyCart}){
                                 <Container className="d-flex flex-column align-items-center text-end border border-primary p-4">
                                     <p className="h5">Order Total:</p>
                                     <p className="h2">${cartTotal}</p>
-                                    <Button variant="outline-warning" type="submit" size="lg" className="w-100 mt-2">Order</Button>
+                                    <Button variant="outline-warning" type="submit" size="lg" className="w-100 mt-2 outline-btn">Order</Button>
                                 </Container>
                             </Col>
                         </Row>

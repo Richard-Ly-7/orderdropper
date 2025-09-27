@@ -73,7 +73,7 @@ export default function Post({ user, displayMessage }){
                         </Form.Group>
                         
                         <div className="d-flex justify-content-center">
-                            <Button variant="outline-primary" type="submit" size="lg">Post</Button>
+                            <Button variant="outline-primary" type="submit" size="lg" className="outline-btn">Post</Button>
                         </div>
 
                     </Form>

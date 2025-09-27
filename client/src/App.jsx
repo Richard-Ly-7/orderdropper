@@ -13,8 +13,17 @@ import ShoppingCart from './pages/ShoppingCart';
 import Purchase from './pages/Purchase';
 import Profile from './pages/Profile';
 import Message from './components/Message';
+import { useAccessibility } from './context/AccessibilityContext';
 
 function App() {
+    const { fontSize, highContrast, highlightLinks } = useAccessibility();
+  
+    const className = [
+        `font-${fontSize}`,
+        highContrast ? 'high-contrast' : '',
+        highlightLinks ? 'highlight-links' : ''
+    ].join(' ');
+
     const [user, setUser] = useState(null);
     const [cartTotal, setCartTotal] = useState(0);
     const [message, setMessage] = useState("");
@@ -141,7 +150,7 @@ function App() {
     }, [user?.shoppingCart]);
 
 return (
-    <>
+    <div className={className}>
         <Navbar user={user} onLogout={handleLogout} displayMessage={displayMessage} />
 
         <Message message={message} messageVisible={messageVisible} setMessageVisible={setMessageVisible} />
@@ -157,7 +166,7 @@ return (
             <Route path="/purchase" element={user ? (user.role === "customer" && user?.shoppingCart?.length > 0 ? <Purchase cartTotal={cartTotal} displayMessage={displayMessage} emptyCart={emptyCart} /> : <Navigate to="/" />) : <Navigate to="/login" /> } />
             <Route path="/profile" element={user ? (user.role === "customer" ? <Profile user={user} /> : <Navigate to={`/restaurantDishes?restaurant=${user.restaurantId}`} />) : <Navigate to="/login" /> } />
         </Routes>
-    </>
+    </div>
 )
 }
 

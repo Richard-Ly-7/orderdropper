@@ -56,3 +56,51 @@
 .navbar-background{
     background-color: rgb(221, 45, 74);
 }
+
+.font-small .h1 { font-size: 2rem; }
+.font-small .h2 { font-size: 1.6rem; }
+.font-small .h3 { font-size: 1.4rem; }
+.font-small .h4 { font-size: 1.2rem; }
+.font-small .h5 { font-size: 1rem; }
+.font-small .h6 { font-size: 0.85rem; }
+
+.font-large .h1 { font-size: 3rem; }
+.font-large .h2 { font-size: 2.4rem; }
+.font-large .h3 { font-size: 2.1rem; }
+.font-large .h4 { font-size: 1.8rem; }
+.font-large .h5 { font-size: 1.5rem; }
+.font-large .h6 { font-size: 1.2rem; }
+
+.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+.high-contrast .dish-container, .high-contrast .restaurant-container {
+    border: 2px solid white;
+}
+
+.high-contrast .outline-btn, .high-contrast .page-btn {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.high-contrast .outline-btn:hover, .high-contrast .outline-btn:focus, .high-contrast .page-btn:hover, .high-contrast .page-btn:focus {
+  background-color: white; 
+  color: black; 
+}
+
+.highlight-links a, .highlight-links .restaurant-container {
+    padding: 0.25rem 1rem;
+    outline: 2px dashed orange;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.font-btn{
+    background-color: black;
+    color: white;
+}

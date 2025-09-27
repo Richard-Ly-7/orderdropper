@@ -2,6 +2,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavigationBar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import AccessibilityMenu from './AccessibilityMenu';
 
 export default function Navbar({ user, onLogout, displayMessage }) {
   const navigate = useNavigate();
@@ -21,9 +23,10 @@ export default function Navbar({ user, onLogout, displayMessage }) {
         </NavigationBar.Brand>
         <NavigationBar.Toggle aria-controls="responsive-NavigationBar-nav" />
         <NavigationBar.Collapse id="responsive-NavigationBar-nav">
-          <Nav className="ms-auto pt-1">
+          <Nav className="ms-auto pt-1 d-flex align-items-center">
             <Nav.Link as={Link} to="/"><p className="text-light h5">Home</p></Nav.Link>
             <Nav.Link as={Link} to="/restaurants"><p className="text-light h5">Restaurants</p></Nav.Link>
+
             {!user ? (
                 <>
                   <Nav.Link as={Link} to="/register"><p className="text-light h5">Register</p></Nav.Link>
@@ -44,6 +47,10 @@ export default function Navbar({ user, onLogout, displayMessage }) {
                 </>
               )
             }
+
+            <NavDropdown title={<img src="/accessibility.svg" alt="accessibility"/>}>
+              <AccessibilityMenu />
+            </NavDropdown>
           </Nav>
         </NavigationBar.Collapse>
       </Container>
