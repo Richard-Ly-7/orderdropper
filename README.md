@@ -59,6 +59,11 @@ POST /restaurants/ - Post restaurant to app
 GET /shoppingcart/:id - Retrieve a specific user's shopping cart
 PUT /shoppingcart/:id - Update a specific user's shopping cart
 
+## How To Test Frontend
+1. Open a terminal and navigate to the client directory.
+2. Ensure node_modules are already installed with `npm install`.
+3. Run `npx vitest`.
+
 ## Image Credits
 
 _Orderdropper and accessibility logos created by Richard Ly._ 
