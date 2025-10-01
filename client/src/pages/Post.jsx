@@ -58,18 +58,18 @@ export default function Post({ user, displayMessage }){
                     <Form onSubmit={handleSubmit}>
 
                         <Form.Group className="mb-4">
-                        <Form.Label>Dish Name</Form.Label>
-                        <Form.Control type="text" value={fields.dishName} onChange={(e) => setFields({...fields, dishName: e.target.value})} required />
+                            <Form.Label htmlFor="dish-name">Dish Name</Form.Label>
+                            <Form.Control id="dish-name" type="text" value={fields.dishName} onChange={(e) => setFields({...fields, dishName: e.target.value})} required />
                         </Form.Group>
 
                         <Form.Group className="mb-4">
-                        <Form.Label>Price</Form.Label>
-                        <Form.Control type="number" value={fields.price} onChange={(e) => setFields({...fields, price: e.target.value})} required />
+                            <Form.Label htmlFor="price">Price</Form.Label>
+                            <Form.Control id="price" type="number" step="0.01" value={fields.price} onChange={(e) => setFields({...fields, price: e.target.value})} required />
                         </Form.Group>
 
                         <Form.Group className="mb-5">
-                            <Form.Label>Upload An Image</Form.Label>
-                            <Form.Control type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
+                            <Form.Label htmlFor="image">Upload An Image</Form.Label>
+                            <Form.Control id="image" type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
                         </Form.Group>
                         
                         <div className="d-flex justify-content-center">

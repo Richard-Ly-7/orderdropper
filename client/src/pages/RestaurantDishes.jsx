@@ -59,7 +59,7 @@ export default function RestaurantDishes({ updateCart, deleteDish, updateDish, u
                 <Restaurant restaurant={restaurantDishes.restaurant} />
             </Row>
 
-            <p className="h2 text-center mb-5">{restaurantDishes.restaurant.name}'s Menu</p>
+            <p className="h2 text-center mb-5">{restaurantDishes?.restaurant?.name}'s Menu</p>
 
             <SearchBar setSearchQuery={setSearchQuery}/>
             

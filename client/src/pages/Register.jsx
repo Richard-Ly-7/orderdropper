@@ -86,13 +86,13 @@ export default function Register({ onAuth, displayMessage }){
 
                             <>
                                 <Form.Group className="mb-4">
-                                    <Form.Label>Display Name</Form.Label>
-                                    <Form.Control type="text" value={fields.displayName} onChange={(e) => setFields({...fields, displayName: e.target.value})} required  />
+                                    <Form.Label htmlFor="display-name-register">Display Name</Form.Label>
+                                    <Form.Control id="display-name-register" type="text" value={fields.displayName} onChange={(e) => setFields({...fields, displayName: e.target.value})} required  />
                                 </Form.Group>
 
                                 <Form.Group className="mb-4">
-                                    <Form.Label>Delivery Address</Form.Label>
-                                    <Form.Control type="text" value={fields.address} onChange={(e) => setFields({...fields, address: e.target.value})} required />
+                                    <Form.Label htmlFor="delivery-address-register">Delivery Address</Form.Label>
+                                    <Form.Control id="delivery-address-register" type="text" value={fields.address} onChange={(e) => setFields({...fields, address: e.target.value})} required />
                                 </Form.Group>
 
                             </>
@@ -100,34 +100,34 @@ export default function Register({ onAuth, displayMessage }){
                             
                             <>
                                 <Form.Group className="mb-4">
-                                    <Form.Label>Restaurant Name</Form.Label>
-                                    <Form.Control type="text" value={fields.restaurantName} onChange={(e) => setFields({...fields, restaurantName: e.target.value})} required />
+                                    <Form.Label htmlFor="restaurant-name-register">Restaurant Name</Form.Label>
+                                    <Form.Control id="restaurant-name-register" type="text" value={fields.restaurantName} onChange={(e) => setFields({...fields, restaurantName: e.target.value})} required />
                                 </Form.Group>
 
                                 <Form.Group className="mb-4">
-                                    <Form.Label>Address</Form.Label>
-                                    <Form.Control type="text" value={fields.address} onChange={(e) => setFields({...fields, address: e.target.value})} required />
+                                    <Form.Label htmlFor="address-register">Address</Form.Label>
+                                    <Form.Control id="address-register" type="text" value={fields.address} onChange={(e) => setFields({...fields, address: e.target.value})} required />
                                 </Form.Group>
                                 
                                 <Form.Group className="mb-4">
-                                    <Form.Label>Description</Form.Label>
-                                    <Form.Control type="text" value={fields.description} onChange={(e) => setFields({...fields, description: e.target.value})} required />
+                                    <Form.Label htmlFor="description-register">Description</Form.Label>
+                                    <Form.Control id="description-register" type="text" value={fields.description} onChange={(e) => setFields({...fields, description: e.target.value})} required />
                                 </Form.Group>
                             </>
                         }
                         <Form.Group className="mb-4">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" value={fields.email} onChange={(e) => setFields({...fields, email: e.target.value})} required />
+                            <Form.Label htmlFor="email-register">Email</Form.Label>
+                            <Form.Control id="email-register" type="email" value={fields.email} onChange={(e) => setFields({...fields, email: e.target.value})} required />
                         </Form.Group>
 
                         <Form.Group className="mb-4">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" value={fields.password} onChange={(e) => setFields({...fields, password: e.target.value})} required />
+                            <Form.Label htmlFor="password-register">Password</Form.Label>
+                            <Form.Control id="password-register" type="password" value={fields.password} onChange={(e) => setFields({...fields, password: e.target.value})} required />
                         </Form.Group>
 
                         <Form.Group className="mb-5">
-                            <Form.Label>Profile Picture</Form.Label>
-                            <Form.Control type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
+                            <Form.Label htmlFor="profile-picture-register">Profile Picture</Form.Label>
+                            <Form.Control id="profile-picture-register" type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
                         </Form.Group>
 
                         <div className="d-flex justify-content-center">

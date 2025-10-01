@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import RestaurantList from './RestaurantList';
+import RestaurantList from '../../components/RestaurantList';
 import { MemoryRouter } from 'react-router-dom';
 
 const DATA = [
@@ -28,7 +28,20 @@ test('renders initial restaurants', () => {
 
     const pizzaHutElements = screen.getAllByText('Pizza Hut');
     expect(pizzaHutElements.length).toBeGreaterThan(0);
+
+    const pizzaHutAddress = screen.getAllByText('1202 39 Ave, Langley, BC V2D D2L');
+    expect(pizzaHutAddress.length).toBeGreaterThan(0);
+
+    const pizzaHutDescription = screen.getAllByText('Homemade pizzas');
+    expect(pizzaHutDescription.length).toBeGreaterThan(0);
+
     const oliveGardenElements = screen.getAllByText('Olive Garden');
     expect(oliveGardenElements.length).toBeGreaterThan(0);
+
+    const oliveGardenAddress = screen.getAllByText('2302 40 Ave, Langley, BC V3J 8K3');
+    expect(oliveGardenAddress.length).toBeGreaterThan(0);
+
+    const oliveGardenDescription = screen.getAllByText('Italian-inspired dishes');
+    expect(oliveGardenDescription.length).toBeGreaterThan(0);
 });
 

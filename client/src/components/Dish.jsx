@@ -38,18 +38,18 @@ export default function Dish({ dish, dishes, setDishes, updateCart, deleteDish, 
                 <Form onSubmit={handleSubmit} className="p-3 m-auto">
 
                     <Form.Group className="mb-2">
-                    <Form.Label>New Dish Name</Form.Label>
-                    <Form.Control type="text" value={newDish.name} onChange={(e) => setNewDish({...newDish, name: e.target.value})} />
+                        <Form.Label htmlFor="new-dish-name">New Dish Name</Form.Label>
+                        <Form.Control id="new-dish-name" type="text" value={newDish.name} onChange={(e) => setNewDish({...newDish, name: e.target.value})} />
                     </Form.Group>
 
                     <Form.Group className="mb-2">
-                    <Form.Label>New Price</Form.Label>
-                    <Form.Control type="number" value={newDish.price} onChange={(e) => setNewDish({...newDish, price: e.target.value === "" ? "" : parseFloat(e.target.value)})} />
+                        <Form.Label htmlFor="new-price">New Price</Form.Label>
+                        <Form.Control id="new-price" type="number" step="0.01" value={newDish.price} onChange={(e) => setNewDish({...newDish, price: e.target.value === "" ? "" : parseFloat(e.target.value)})} />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <Form.Label>New Image</Form.Label>
-                        <Form.Control type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
+                        <Form.Label htmlFor="new-image">New Image</Form.Label>
+                        <Form.Control id="new-image" type="file" accept="image/jpg, image/jpeg, image/png, image/webp" onChange={convertToBase64} />
                     </Form.Group>
                     
                     <div className="d-flex justify-content-evenly">

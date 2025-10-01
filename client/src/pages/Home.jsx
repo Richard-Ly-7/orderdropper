@@ -45,7 +45,7 @@ export default function Home({ updateCart, user }){
         );
     }
 
-    if(dishes.length === 0) {
+    if(dishes?.length === 0) {
         return <div>No dishes found.</div>;
     }
 

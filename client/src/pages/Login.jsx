@@ -41,13 +41,13 @@ export default function Login({ onAuth, displayMessage }){
                 <Col xs={7} sm={7}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-4">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <Form.Label htmlFor="email-login">Email</Form.Label>
+                            <Form.Control id="email-login" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </Form.Group>
 
                         <Form.Group className="mb-4">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <Form.Label htmlFor="password-login">Password</Form.Label>
+                            <Form.Control id="password-login" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         </Form.Group>
 
                         <div className="d-flex justify-content-center">
